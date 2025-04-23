@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <link rel="stylesheet" href="task.css">
+</head>
+<body>
+    
+    <h2>Task Manager</h2>
+
+    <div class="todo-container">
+        <input type="text" id="taskInput" placeholder="Enter a Task">
+        <button onclick="addTask()">Add Task</button>
+        <ul id="taskList"></ul>
+
+    </div>
+    <script>
+        function addTask() {
+            const task = document.getElementById("taskInput").value;
+            if (task === "") {
+                alert("Please enter a task");
+                return;
+            }    
+            const li = document.createElement("li");
+            li.textContent = task;
+            document.getElementById("taskList").appendChild(li)
+            document.getElementById("taskinput").value("");
+
+        }
+
+    </script>
+
+
+
+</body>   
